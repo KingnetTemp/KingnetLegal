@@ -9,7 +9,15 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/data': {                        // 自訂 local 端的位置
+        target: 'http://external.kingnetsmart.com.tw/api/ExternalControllers/CommitteeBackstage/',  // 遠端 URL Domain
+        changeOrigin: true,
+        pathRewrite: {
+          '^/data': ''
+        },
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

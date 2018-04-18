@@ -50,11 +50,16 @@
                         <td>
                             <el-select v-model="typeOptValue"
                                 placeholder="請選擇">
-                                <el-option v-for="item in typeOpt"
+                                <el-option v-for="item in CommitteeNewsType"
+                                    :key="item.value"
+                                    :label="item.type_id"
+                                    :value="item.type_name">
+                                </el-option>
+                                <!-- <el-option v-for="item in typeOpt"
                                     :key="item.value"
                                     :label="item.label"
                                     :value="item.value">
-                                </el-option>
+                                </el-option> -->
                             </el-select>
                         </td>
                         <th>狀態</th>
